@@ -1,0 +1,379 @@
+{
+  "brand": "Defenza Doors & Windows",
+  "phone": "9010600096",
+  "email": "Defenzahome@gmail.com",
+  "products": [
+    {
+      "name": "Proxy With Pillar",
+      "slug": "proxy-with-pillar",
+      "category": "Copper Finish",
+      "variants": [
+        {
+          "image": "images/proxy-with-pillar-1.webp",
+          "size": "2050 x 1500 / 1800 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Proxy",
+      "slug": "proxy",
+      "category": "Copper Finish",
+      "variants": [
+        {
+          "image": "images/proxy-1.webp",
+          "size": "2050 x 1800 x 90 mm"
+        },
+        {
+          "image": "images/proxy-2.webp",
+          "size": "2050 x 1500 x 90 mm"
+        },
+        {
+          "image": "images/proxy-3.webp",
+          "size": "2050 x 1200 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Neta",
+      "slug": "neta",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/neta-1.webp",
+          "size": "2050 x 1800 x 70 mm"
+        },
+        {
+          "image": "images/neta-2.webp",
+          "size": "2050 x 1200 / 1300 x 70 mm"
+        },
+        {
+          "image": "images/neta-3.webp",
+          "size": "2350 / 2050 x 1500 x 70 mm"
+        },
+        {
+          "image": "images/neta-4.webp",
+          "size": "2050 x 1080 / 1200 / 1300 x 70 mm"
+        },
+        {
+          "image": "images/neta-5.webp",
+          "size": "1950 / 2050 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/neta-6.webp",
+          "size": "1950 / 2050 x 880 / 980 x 70 mm"
+        },
+        {
+          "image": "images/neta-7.webp",
+          "size": "1950 / 2050 x 880 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Helen Gold",
+      "slug": "helen-gold",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/helen-gold-1.webp",
+          "size": "2050 x 1200 x 1500 x 70 mm"
+        },
+        {
+          "image": "images/helen-gold-2.webp",
+          "size": "2050 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/helen-gold-3.webp",
+          "size": "2050 x 1080 x 70 mm"
+        },
+        {
+          "image": "images/helen-gold-4.webp",
+          "size": "2050 x 980 x 70 mm"
+        },
+        {
+          "image": "images/helen-gold-5.webp",
+          "size": "2050 x 880 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Zeno",
+      "slug": "zeno",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/zeno-1.webp",
+          "size": "2350 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/zeno-2.webp",
+          "size": "2050 / 2150 / 2350 x 1080 / 1200 x 70 mm"
+        },
+        {
+          "image": "images/zeno-3.webp",
+          "size": "2350 x 880 / 980 x 70 mm"
+        },
+        {
+          "image": "images/zeno-4.webp",
+          "size": "2050 / 2150 x 880 / 980 x 70 mm"
+        },
+        {
+          "image": "images/zeno-5.webp",
+          "size": "2050 / 2150 / 2350 x 880 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Rush",
+      "slug": "rush",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/rush-1.webp",
+          "size": "2050 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/rush-2.webp",
+          "size": "2050 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/rush-3.webp",
+          "size": "2050 x 1080 x 70 mm"
+        },
+        {
+          "image": "images/rush-4.webp",
+          "size": "2050 x 980 x 70 mm"
+        },
+        {
+          "image": "images/rush-5.webp",
+          "size": "2050 x 880 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Neo",
+      "slug": "neo",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/neo-1.webp",
+          "size": "2050 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/neo-2.webp",
+          "size": "2050 x 1080 x 70 mm"
+        },
+        {
+          "image": "images/neo-3.webp",
+          "size": "2050 x 980 x 70 mm"
+        },
+        {
+          "image": "images/neo-4.webp",
+          "size": "2050 x 880 x 70 mm"
+        },
+        {
+          "image": "images/neo-5.webp",
+          "size": "2050 x 880 x 50 mm"
+        }
+      ]
+    },
+    {
+      "name": "Elite",
+      "slug": "elite",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/elite-1.webp",
+          "size": "2050 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/elite-2.webp",
+          "size": "2050 x 1080 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Rush Twin Door",
+      "slug": "rush-twin-door",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/rush-twin-door-1.webp",
+          "size": "2050 x 1080 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Grill Door",
+      "slug": "grill-door",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/grill-door-1.webp",
+          "size": "2050 x 1200 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Vigneswara",
+      "slug": "vigneswara",
+      "category": "Copper Finish",
+      "variants": [
+        {
+          "image": "images/vigneswara-1.webp",
+          "size": "2050 x 1500 x 90 mm"
+        },
+        {
+          "image": "images/vigneswara-2.webp",
+          "size": "2050 x 1200 x 90 mm"
+        },
+        {
+          "image": "images/vigneswara-3.webp",
+          "size": "2050 x 1080 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Odox",
+      "slug": "odox",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/odox-1.webp",
+          "size": "2350 x 1500 x 70 mm"
+        },
+        {
+          "image": "images/odox-2.webp",
+          "size": "2050 x 1300 x 70 mm"
+        },
+        {
+          "image": "images/odox-3.webp",
+          "size": "2050 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/odox-4.webp",
+          "size": "2050 x 1080 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Oscar",
+      "slug": "oscar",
+      "category": "Wooden Finish",
+      "variants": [
+        {
+          "image": "images/oscar-1.webp",
+          "size": "2350 x 1800 x 70 mm"
+        },
+        {
+          "image": "images/oscar-2.webp",
+          "size": "2050 x 1200 x 70 mm"
+        },
+        {
+          "image": "images/oscar-3.webp",
+          "size": "2050 x 1080 x 70 mm"
+        },
+        {
+          "image": "images/oscar-4.webp",
+          "size": "2050 x 980 x 70 mm"
+        },
+        {
+          "image": "images/oscar-5.webp",
+          "size": "2050 x 880 x 70 mm"
+        }
+      ]
+    },
+    {
+      "name": "Atlas",
+      "slug": "atlas",
+      "category": "Designer Finish",
+      "variants": [
+        {
+          "image": "images/atlas-1.webp",
+          "size": "2050 x 1500 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Zion",
+      "slug": "zion",
+      "category": "Copper Finish",
+      "variants": [
+        {
+          "image": "images/zion-1.webp",
+          "size": "2050 / 2350 x 1500 / 1800 x 90 mm"
+        },
+        {
+          "image": "images/zion-2.webp",
+          "size": "2050 x 1200 x 90 mm"
+        },
+        {
+          "image": "images/zion-3.webp",
+          "size": "2050 x 1080 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Victoria",
+      "slug": "victoria",
+      "category": "Copper Finish",
+      "variants": [
+        {
+          "image": "images/victoria-1.webp",
+          "size": "2050 x 1200 x 90 mm"
+        },
+        {
+          "image": "images/victoria-2.webp",
+          "size": "2050 x 1080 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Protector",
+      "slug": "protector",
+      "category": "Copper Finish",
+      "variants": [
+        {
+          "image": "images/protector-1.webp",
+          "size": "2050 x 1200 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Aura",
+      "slug": "aura",
+      "category": "Copper Finish",
+      "variants": [
+        {
+          "image": "images/aura-1.webp",
+          "size": "2050 x 1200 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Valor",
+      "slug": "valor",
+      "category": "Smart Lock",
+      "variants": [
+        {
+          "image": "images/valor-1.webp",
+          "size": "2050 x 1200 x 90 mm"
+        },
+        {
+          "image": "images/valor-2.webp",
+          "size": "2050 x 1500 x 90 mm"
+        }
+      ]
+    },
+    {
+      "name": "Opal",
+      "slug": "opal",
+      "category": "Designer Finish",
+      "variants": [
+        {
+          "image": "images/opal-1.webp",
+          "size": "2050 x 1080 / 1200 x 90 mm"
+        }
+      ]
+    }
+  ]
+}

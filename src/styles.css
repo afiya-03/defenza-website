@@ -1,0 +1,1605 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #0d0d0d;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+a {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+  min-height: 42px;
+  background: #2f4052;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+}
+
+.top-contact {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.top-contact span {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  height: 88px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  border-bottom: 1px solid #eeeeee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  min-width: 180px;
+}
+
+.logo span {
+  color: #e31e24;
+  font-size: 29px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.logo small {
+  color: #0d0d0d;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-top: 7px;
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e31e24;
+}
+
+
+/* =========================================================
+   ENQUIRE BUTTON
+========================================================= */
+
+.enquire-btn {
+  border: none;
+  background: #e31e24;
+  color: #ffffff;
+  border-radius: 40px;
+  padding: 8px 9px 8px 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.enquire-btn span {
+  width: 34px;
+  height: 34px;
+  background: #ffffff;
+  color: #e31e24;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+}
+
+.enquire-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: calc(100vh - 130px);
+  background: #e8edf1;
+  padding: 60px 5% 45px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+/* =========================================================
+   HERO SLIDER
+========================================================= */
+
+.door-slider {
+  width: 100%;
+  max-width: 1450px;
+  height: 570px;
+  margin: 5px auto 0;
+  position: relative;
+}
+
+.defenza-swiper {
+  width: 100%;
+  height: 100%;
+  padding: 35px 0 60px;
+}
+
+.defenza-swiper .swiper-slide {
+  width: 280px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   RECTANGULAR DOORS
+========================================================= */
+
+.defenza-swiper .door-arch {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0d0d0d;
+  border-radius: 0;
+  border: 5px solid #0d0d0d;
+  position: relative;
+}
+
+.defenza-swiper .door-arch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(47, 64, 82, 0.5);
+  pointer-events: none;
+}
+
+.defenza-swiper .door-arch img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   HERO ARROWS
+========================================================= */
+
+.hero-arrows {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: -20px;
+  position: relative;
+  z-index: 20;
+}
+
+.arrow {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #f4f4f4;
+  color: #0d0d0d;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.arrow.active,
+.arrow:hover {
+  background: #e31e24;
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about-section {
+  padding: 110px 6%;
+  background: #ffffff;
+}
+
+.about-container {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+
+/* =========================================================
+   ABOUT LEFT
+========================================================= */
+
+.about-left {
+  width: 100%;
+}
+
+
+/* =========================================================
+   SINCE BADGE
+========================================================= */
+
+.about-badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px 8px 9px;
+  border: 1px solid #e31e24;
+  border-radius: 50px;
+  color: #0d0d0d;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.check-circle {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #e31e24;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+
+/* =========================================================
+   ABOUT HEADING
+========================================================= */
+
+.about-title {
+  margin-top: 28px;
+  color: #0d0d0d;
+  font-size: clamp(48px, 5vw, 72px);
+  line-height: 0.98;
+  font-weight: 900;
+  letter-spacing: -3px;
+  max-width: 600px;
+}
+
+
+/* =========================================================
+   ABOUT LARGE IMAGE
+========================================================= */
+
+.about-main-image {
+  width: 100%;
+  height: 570px;
+  margin-top: 45px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #eeeeee;
+}
+
+.about-main-image img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   ABOUT RIGHT
+========================================================= */
+
+.about-right {
+  width: 100%;
+  padding-top: 5px;
+}
+
+
+/* =========================================================
+   ABOUT PROFILE
+========================================================= */
+
+.about-profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.about-profile-photo {
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #e31e24;
+  background: #eeeeee;
+}
+
+.about-profile-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.about-profile-info h3 {
+  color: #0d0d0d;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.about-profile-info p {
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ABOUT DESCRIPTION
+========================================================= */
+
+.about-description {
+  margin-top: 35px;
+  max-width: 560px;
+  color: #555555;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   DISCOVER BUTTON
+========================================================= */
+
+.discover-btn {
+  width: fit-content;
+  margin-top: 30px;
+  padding: 8px 9px 8px 22px;
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  background: #e31e24;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.discover-btn:hover {
+  transform: translateY(-3px);
+}
+
+.discover-arrow {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #e31e24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   ABOUT BLACK DOOR PANEL
+========================================================= */
+
+.about-door-panel {
+  width: 100%;
+  height: 400px;
+  margin-top: 35px;
+  padding: 25px;
+  background: #0d0d0d;
+  border-radius: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  overflow: hidden;
+}
+
+.panel-door {
+  height: 100%;
+  overflow: hidden;
+  background: #111111;
+}
+
+.panel-door img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+.section-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: #e31e24;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   SERVICES SECTION
+========================================================= */
+
+.services-section {
+  background: #1a1a1a;
+  padding: 0 0 140px;
+  position: relative;
+}
+
+
+/* =========================================================
+   SERVICES RED BANNER
+========================================================= */
+
+.services-banner {
+  min-height: 330px;
+  background: #e31e24;
+  color: #ffffff;
+  padding: 70px 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-banner::after {
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: 0;
+  width: 170px;
+  height: 100%;
+  background: #1a1a1a;
+  clip-path: polygon(
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+.services-banner-left {
+  position: relative;
+  z-index: 2;
+}
+
+.services-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.services-badge span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: block;
+}
+
+.services-banner h2 {
+  margin: 0;
+  max-width: 760px;
+  color: #ffffff;
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 0.98;
+  font-weight: 900;
+  letter-spacing: -3px;
+}
+
+.browse-services {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.browse-arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #e31e24;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  transition: transform 0.25s ease;
+}
+
+.browse-services:hover .browse-arrow {
+  transform: translateX(5px);
+}
+
+
+/* =========================================================
+   SERVICE STACK
+========================================================= */
+
+.services-stack {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 100px 6% 0;
+  position: relative;
+}
+
+
+/* =========================================================
+   SERVICE CARD
+========================================================= */
+
+.service-block {
+  min-height: 530px;
+  width: 100%;
+  position: sticky;
+  top: 90px;
+  margin-bottom: 100px;
+  padding: 55px;
+  background: #0d0d0d;
+  border-radius: 24px;
+  border-top: 2px solid #e31e24;
+  display: grid;
+  grid-template-columns: 130px 1fr 330px;
+  gap: 45px;
+  align-items: center;
+  overflow: hidden;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35);
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.service-block::before {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: -130px;
+  bottom: -160px;
+  background: rgba(227, 30, 36, 0.18);
+  border-radius: 50%;
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.service-block-1 {
+  z-index: 1;
+}
+
+.service-block-2 {
+  z-index: 2;
+}
+
+.service-block-3 {
+  z-index: 3;
+}
+
+
+/* =========================================================
+   SERVICE NUMBER
+========================================================= */
+
+.service-number {
+  color: transparent;
+  -webkit-text-stroke: 2px #e31e24;
+  font-size: 70px;
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -4px;
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   SERVICE CONTENT
+========================================================= */
+
+.service-content {
+  position: relative;
+  z-index: 2;
+}
+
+.service-content h3 {
+  margin: 0 0 22px;
+  color: #ffffff;
+  font-size: clamp(32px, 3.2vw, 50px);
+  line-height: 1;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.service-content p {
+  max-width: 570px;
+  margin: 0;
+  color: #bdbdbd;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   SERVICE TAGS
+========================================================= */
+
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.service-tags span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 7px 16px;
+  border: 1px solid rgba(227, 30, 36, 0.7);
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: default;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.service-tags span:hover {
+  background: #e31e24;
+  border-color: #e31e24;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SERVICE PHOTO
+   SMALL RECTANGLE + ROUNDED CORNERS
+========================================================= */
+
+.service-image {
+  width: 100%;
+  height: 390px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 2;
+}
+
+
+/* Red rounded rectangular frame */
+
+.service-image::before {
+  content: "";
+  position: absolute;
+  width: 78%;
+  height: 88%;
+  right: 3%;
+  top: 4%;
+  border: 3px solid #e31e24;
+  border-radius: 12px;
+  transform: translate(16px, 16px);
+  z-index: 0;
+}
+
+
+/* Smaller rectangular door */
+
+.service-image img {
+  width: 78%;
+  height: 88%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+
+/* =========================================================
+   DIFFERENT SERVICE DOORS
+========================================================= */
+
+.service-block-1 .service-image img {
+  object-position: center center;
+  transform: scale(1);
+}
+
+.service-block-2 .service-image img {
+  object-position: center center;
+  transform: scale(1.05);
+}
+
+.service-block-3 .service-image img {
+  object-position: center center;
+  transform: scale(1.08);
+}
+
+
+/* Different red frame positions */
+
+.service-block-1 .service-image::before {
+  transform: translate(16px, 16px);
+}
+
+.service-block-2 .service-image::before {
+  transform: translate(13px, 16px);
+}
+
+.service-block-3 .service-image::before {
+  transform: translate(10px, 16px);
+}
+
+
+/* =========================================================
+   SERVICE CARD SPACING
+========================================================= */
+
+.service-block:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+.products-section {
+  padding: 100px 6%;
+  background: #0d0d0d;
+}
+
+.products-section h2 {
+  color: #ffffff;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.product-card {
+  background: #ffffff;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 330px;
+  display: block;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  padding: 18px;
+  font-size: 18px;
+  color: #0d0d0d;
+}
+
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery-section {
+  padding: 100px 6%;
+  background: #ffffff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 50px;
+}
+
+.gallery-item {
+  height: 300px;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: 0.4s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+  padding: 100px 6%;
+  background: #f7f7f7;
+}
+
+.contact-section p:not(.section-label) {
+  max-width: 650px;
+  color: #555555;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 30px;
+  background: #e31e24;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FLOATING BUTTONS
+========================================================= */
+
+.floating-buttons {
+  position: fixed;
+  right: 22px;
+  bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2000;
+}
+
+.floating-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.phone-btn {
+  background: #e31e24;
+  color: #ffffff;
+}
+
+.whatsapp-btn {
+  background: #0d0d0d;
+  color: #ffffff;
+}
+
+.top-btn {
+  background: #f4f4f4;
+  color: #0d0d0d;
+}
+
+.floating-btn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+
+  /* HERO */
+
+  .defenza-swiper .swiper-slide {
+    width: 250px;
+    height: 460px;
+  }
+
+
+  /* ABOUT */
+
+  .about-container {
+    gap: 45px;
+  }
+
+  .about-title {
+    font-size: 55px;
+  }
+
+  .about-main-image {
+    height: 500px;
+  }
+
+  .about-profile-info h3 {
+    font-size: 23px;
+  }
+
+
+  /* SERVICES */
+
+  .services-banner {
+    min-height: 300px;
+    padding: 60px 5%;
+  }
+
+  .services-banner h2 {
+    font-size: 55px;
+  }
+
+  .services-stack {
+    padding: 80px 5% 0;
+  }
+
+  .service-block {
+    min-height: 500px;
+    padding: 40px;
+    grid-template-columns: 90px 1fr 250px;
+    gap: 30px;
+  }
+
+  .service-number {
+    font-size: 55px;
+  }
+
+  .service-content h3 {
+    font-size: 36px;
+  }
+
+  .service-image {
+    height: 350px;
+  }
+
+  .service-image img {
+    width: 78%;
+    height: 88%;
+  }
+
+  .service-image::before {
+    width: 78%;
+    height: 88%;
+  }
+
+
+  /* PRODUCTS */
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+
+  /* GALLERY */
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  /* TOP BAR */
+
+  .top-bar {
+    min-height: 42px;
+    padding: 10px 20px;
+    justify-content: center;
+  }
+
+  .top-contact {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .top-contact span {
+    font-size: 12px;
+  }
+
+
+  /* NAVBAR */
+
+  .navbar {
+    height: auto;
+    padding: 18px 20px;
+    flex-wrap: wrap;
+  }
+
+  .logo {
+    min-width: auto;
+  }
+
+  .logo span {
+    font-size: 24px;
+  }
+
+  .logo small {
+    font-size: 8px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-actions {
+    margin-left: auto;
+  }
+
+  .enquire-btn {
+    padding: 7px 8px 7px 15px;
+    font-size: 12px;
+  }
+
+  .enquire-btn span {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    padding: 45px 10px 35px;
+  }
+
+  .door-slider {
+    height: 480px;
+    margin-top: 15px;
+  }
+
+  .defenza-swiper {
+    padding-top: 20px;
+  }
+
+  .defenza-swiper .swiper-slide {
+    width: 270px;
+    height: 430px;
+  }
+
+  .hero-arrows {
+    margin-top: -5px;
+  }
+
+
+  /* ABOUT */
+
+  .about-section {
+    padding: 80px 20px;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .about-left {
+    width: 100%;
+  }
+
+  .about-badge {
+    font-size: 12px;
+  }
+
+  .about-title {
+    margin-top: 22px;
+    font-size: 48px;
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .about-main-image {
+    height: 450px;
+    margin-top: 35px;
+    border-radius: 20px;
+  }
+
+  .about-right {
+    padding-top: 0;
+  }
+
+  .about-profile {
+    align-items: center;
+    gap: 16px;
+  }
+
+  .about-profile-photo {
+    width: 95px;
+    height: 95px;
+  }
+
+  .about-profile-info h3 {
+    font-size: 22px;
+  }
+
+  .about-profile-info p {
+    font-size: 13px;
+  }
+
+  .about-description {
+    margin-top: 28px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .discover-btn {
+    margin-top: 25px;
+  }
+
+  .about-door-panel {
+    height: 350px;
+    margin-top: 30px;
+    padding: 18px;
+    gap: 12px;
+    border-radius: 20px;
+  }
+
+
+  /* =====================================================
+     SERVICES MOBILE
+  ===================================================== */
+
+  .services-section {
+    padding-bottom: 90px;
+  }
+
+  .services-banner {
+    min-height: 390px;
+    padding: 55px 24px;
+    align-items: flex-start;
+  }
+
+  .services-banner::after {
+    width: 90px;
+  }
+
+  .services-banner h2 {
+    font-size: 42px;
+    letter-spacing: -2px;
+  }
+
+  .services-badge {
+    margin-bottom: 22px;
+  }
+
+  .browse-services {
+    display: none;
+  }
+
+  .services-stack {
+    padding: 60px 18px 0;
+  }
+
+  .service-block {
+    min-height: auto;
+    padding: 32px 24px 35px;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    top: 70px;
+    margin-bottom: 70px;
+    border-radius: 22px;
+  }
+
+  .service-number {
+    font-size: 48px;
+    letter-spacing: -3px;
+  }
+
+  .service-content h3 {
+    font-size: 32px;
+    line-height: 1.05;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+  }
+
+  .service-content p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .service-tags {
+    margin-top: 24px;
+    gap: 8px;
+  }
+
+  .service-tags span {
+    font-size: 12px;
+    min-height: 34px;
+    padding: 6px 13px;
+  }
+
+
+  /* SMALL ROUNDED RECTANGULAR SERVICE DOORS */
+
+  .service-image {
+    height: 310px;
+    margin-top: 5px;
+  }
+
+  .service-image img {
+    width: 78%;
+    height: 88%;
+    border-radius: 10px;
+  }
+
+  .service-image::before {
+    width: 78%;
+    height: 88%;
+    right: 7%;
+    top: 3%;
+    border-radius: 10px;
+    transform: translate(11px, 11px);
+  }
+
+
+  /* DIFFERENT SERVICE DOORS ON MOBILE */
+
+  .service-block-1 .service-image img {
+    transform: scale(1);
+  }
+
+  .service-block-2 .service-image img {
+    transform: scale(1.04);
+  }
+
+  .service-block-3 .service-image img {
+    transform: scale(1.07);
+  }
+
+
+  /* OTHER SECTIONS */
+
+  .products-section,
+  .gallery-section,
+  .contact-section {
+    padding: 70px 20px;
+  }
+
+  .products-section h2,
+  .gallery-section h2,
+  .contact-section h2 {
+    font-size: 40px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 400px;
+  }
+
+  .gallery-item {
+    height: 400px;
+  }
+
+  .contact-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+
+  /* FLOATING */
+
+  .floating-buttons {
+    right: 12px;
+    bottom: 15px;
+  }
+
+  .floating-btn {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .logo span {
+    font-size: 21px;
+  }
+
+  .logo small {
+    font-size: 7px;
+    letter-spacing: 1.5px;
+  }
+
+
+  /* HERO */
+
+  .door-slider {
+    height: 420px;
+  }
+
+  .defenza-swiper .swiper-slide {
+    width: 245px;
+    height: 380px;
+  }
+
+
+  /* ABOUT */
+
+  .about-title {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+
+  .about-main-image {
+    height: 380px;
+  }
+
+  .about-profile-photo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .about-profile-info h3 {
+    font-size: 19px;
+  }
+
+  .about-profile-info p {
+    font-size: 12px;
+  }
+
+  .about-door-panel {
+    height: 300px;
+    padding: 12px;
+    gap: 8px;
+  }
+
+
+  /* SERVICES */
+
+  .services-banner {
+    min-height: 350px;
+    padding: 50px 20px;
+  }
+
+  .services-banner h2 {
+    font-size: 35px;
+  }
+
+  .services-stack {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .service-block {
+    padding: 28px 20px 30px;
+  }
+
+  .service-number {
+    font-size: 42px;
+  }
+
+  .service-content h3 {
+    font-size: 28px;
+  }
+
+  .service-image {
+    height: 290px;
+  }
+
+  .service-image img {
+    width: 78%;
+    height: 88%;
+    border-radius: 9px;
+  }
+
+  .service-image::before {
+    width: 78%;
+    height: 88%;
+    border-radius: 9px;
+  }
+
+
+  /* OTHER SECTIONS */
+
+  .products-section h2,
+  .gallery-section h2,
+  .contact-section h2 {
+    font-size: 36px;
+  }
+
+  .product-card img {
+    height: 370px;
+  }
+
+  .gallery-item {
+    height: 350px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .service-block,
+  .service-tags span,
+  .browse-arrow,
+  .discover-btn,
+  .enquire-btn,
+  .floating-btn,
+  .gallery-item img {
+    transition: none;
+  }
+
+  .service-tags span:hover {
+    transform: none;
+  }
+
+  .browse-services:hover .browse-arrow {
+    transform: none;
+  }
+
+  .discover-btn:hover,
+  .enquire-btn:hover,
+  .floating-btn:hover,
+  .gallery-item:hover img {
+    transform: none;
+  }
+}
