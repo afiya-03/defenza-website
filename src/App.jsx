@@ -110,8 +110,45 @@ const productImageModules = import.meta.glob(
   }
 );
 
+
 function loadProductImages(brandFolder, brandName) {
   const folder = brandFolder.toLowerCase();
+
+  const kinzaNames = [
+    "Shalome",
+    "Canva DCW",
+    "Sonet 1500",
+    "Rich",
+    "Heaven with Pillar 1500",
+    "Gothic",
+    "Emperor",
+    "Crysta 1500",
+    "Artis 1800",
+    "Vinayaka 1500",
+    "Golden",
+    "Maharaja 1800",
+    "Denza",
+    "Winter Copper",
+    "Royal DCW",
+  ];
+
+  const fusimNames = [
+    "Proxy with Pillar",
+    "Proxy",
+    "M/L Proxy",
+    "Neta",
+    "Helen",
+    "Gold",
+    "Zeno",
+    "Fusim Door 8",
+    "Fusim Door 9",
+    "Fusim Door 10",
+    "Fusim Door 11",
+    "Fusim Door 12",
+    "Fusim Door 13",
+    "Fusim Door 14",
+    "Fusim Door 15",
+  ];
 
   return Object.entries(productImageModules)
     .filter(([path]) => {
@@ -135,12 +172,15 @@ function loadProductImages(brandFolder, brandName) {
         path.match(/door(\d+)/i)?.[1] || index + 1
       );
 
+      const names = folder === "kinza" ? kinzaNames : fusimNames;
+
       return {
         id: `${folder}-${doorNumber}`,
         image,
         brand: brandName,
-        title: `Door Design ${doorNumber}`,
+        title: names[doorNumber - 1] || `${brandName} Door ${doorNumber}`,
         doorNumber,
+        size: "Contact us to confirm size",
       };
     });
 }
@@ -613,6 +653,9 @@ function App() {
                         <div>
                           <span>{product.brand}</span>
                           <h3>{product.title}</h3>
+                          <p className="product-size">
+                            Size: {product.size}
+                              </p>
                         </div>
                       </div>
 
