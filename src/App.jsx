@@ -768,6 +768,104 @@ function App() {
   </div>
 </section>
 
+{/* WHY CHOOSE US SECTION */}
+<section className="why-choose-section" id="why-choose-us">
+  <div className="why-choose-container">
+    <div className="why-choose-content">
+      <span className="section-eyebrow">WHY CHOOSE US</span>
+
+      <h2>
+        Trusted Excellence in
+        <br />
+        Premium Steel Door Solutions
+      </h2>
+
+      <div className="why-choose-features">
+        <div className="why-choose-feature">
+          <svg
+            className="why-choose-icon"
+            viewBox="0 0 48 48"
+            fill="none"
+            aria-hidden="true"
+          >
+            <path
+              d="M24 4L40 10V22C40 32 33 40 24 44C15 40 8 32 8 22V10L24 4Z"
+              stroke="currentColor"
+              strokeWidth="2"
+            />
+            <path
+              d="M16 24L22 30L33 18"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+
+          <h3>Superior Build Quality</h3>
+          <p>
+            Engineered with precision using high-strength steel
+            and premium wooden finishes for lasting durability
+            and protection.
+          </p>
+        </div>
+
+        <div className="why-choose-feature">
+          <svg
+            className="why-choose-icon"
+            viewBox="0 0 48 48"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle
+              cx="24"
+              cy="15"
+              r="8"
+              stroke="currentColor"
+              strokeWidth="2"
+            />
+            <path
+              d="M8 41C8 31 14 26 24 26S40 31 40 41"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M31 12L34 15L40 8"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+
+          <h3>Reliable Customer Trust</h3>
+          <p>
+            Delivering secure, stylish, and performance-driven
+            door solutions trusted by homeowners and businesses.
+          </p>
+        </div>
+      </div>
+
+      <a className="why-choose-button" href="#contact">
+        Discover More →
+      </a>
+    </div>
+
+    <div className="why-choose-image">
+      <img
+        src={kinzaDoor1}
+        alt="DEFENZA premium steel entrance door"
+      />
+
+      <div className="why-choose-brand">
+        <strong>DEFENZA</strong>
+        <span>DOORS &amp; WINDOWS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
         {/* AUTOMATIC MOVING DOOR CATEGORIES */}
 
         <section className="door-marquee" aria-label="Door categories">
