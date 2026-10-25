@@ -110,45 +110,70 @@ const productImageModules = import.meta.glob(
   }
 );
 
+/* ========================================
+   KINZA PRODUCT NAMES AND SIZES
+   Size format: Height × Width × Thickness
+======================================== */
+
+const kinzaProductsData = [
+  ["Crysta", "2200 × 1500 × 110 mm"],
+  ["Emperor", "2350 × 1500 × 90 mm"],
+  ["Gothic", "2050 × 1500 × 90 mm"],
+  ["Artis", "2200 × 1800 × 110 mm"],
+  ["Vinayaka", "2050 × 1080 × 90 mm"],
+  ["Heaven with Pillar", "2050 × 1500 × 90 mm"],
+  ["Golden", "2050 × 1080 × 90 mm"],
+  ["Rich", "2050 × 1200 × 90 mm"],
+  ["Maharaja Plazza Glass with Pillar", "2200 × 1800 × 90 mm"],
+  ["Sonet", "2050 × 1080 × 90 mm"],
+  ["Canva DCW", "2050 × 1200 × 90 mm"],
+  ["Shalome", "2050 × 1080 × 90 mm"],
+  ["Retro", "2050 × 1080 × 90 mm"],
+  ["Windoor", "2350 × 1500 × 90 mm"],
+  ["Brown", "2050 × 1200 × 90 mm"],
+  ["Defender", "2050 × 1200 × 70 mm"],
+  ["Mapple", "2050 × 1080 × 70 mm"],
+  ["Tectano", "2050 × 1080 × 70 mm"],
+  ["Portia DCW", "2050 × 1200 × 70 mm"],
+  ["Alcove", "2050 × 1080 × 90 mm"],
+];
+
+/* ========================================
+   FUSIM PRODUCT NAMES AND SIZES
+======================================== */
+
+const fusimProductsData = [
+  ["Proxy with Pillar", "2050 × 1500 / 1800 × 90 mm (M/L)"],
+  ["Proxy", "Confirm from catalog"],
+  ["Neta", "Confirm from catalog"],
+  ["Helen Gold", "Confirm from catalog"],
+  ["Zeno", "Confirm from catalog"],
+  ["Rush", "Confirm from catalog"],
+  ["Neo", "Confirm from catalog"],
+  ["Elite", "Confirm from catalog"],
+  ["Rush Twin Door", "Confirm from catalog"],
+  ["Grill Door", "Confirm from catalog"],
+  ["Vigneswara", "Confirm from catalog"],
+  ["Odox", "Confirm from catalog"],
+  ["Oscar", "Confirm from catalog"],
+  ["Atlas", "Confirm from catalog"],
+  ["Zion", "Confirm from catalog"],
+  ["Victoria", "Confirm from catalog"],
+  ["Protector", "Confirm from catalog"],
+  ["Aura", "Confirm from catalog"],
+  ["Valor", "Confirm from catalog"],
+  ["Opal", "Confirm from catalog"],
+];
+   
+/* ========================================
+   LOAD PRODUCT IMAGES
+======================================== */
 
 function loadProductImages(brandFolder, brandName) {
   const folder = brandFolder.toLowerCase();
 
-  const kinzaNames = [
-    "Shalome",
-    "Canva DCW",
-    "Sonet 1500",
-    "Rich",
-    "Heaven with Pillar 1500",
-    "Gothic",
-    "Emperor",
-    "Crysta 1500",
-    "Artis 1800",
-    "Vinayaka 1500",
-    "Golden",
-    "Maharaja 1800",
-    "Denza",
-    "Winter Copper",
-    "Royal DCW",
-  ];
-
-  const fusimNames = [
-    "Proxy with Pillar",
-    "Proxy",
-    "M/L Proxy",
-    "Neta",
-    "Helen",
-    "Gold",
-    "Zeno",
-    "Fusim Door 8",
-    "Fusim Door 9",
-    "Fusim Door 10",
-    "Fusim Door 11",
-    "Fusim Door 12",
-    "Fusim Door 13",
-    "Fusim Door 14",
-    "Fusim Door 15",
-  ];
+  const productData =
+    folder === "kinza" ? kinzaProductsData : fusimProductsData;
 
   return Object.entries(productImageModules)
     .filter(([path]) => {
@@ -172,37 +197,33 @@ function loadProductImages(brandFolder, brandName) {
         path.match(/door(\d+)/i)?.[1] || index + 1
       );
 
-      const names = folder === "kinza" ? kinzaNames : fusimNames;
+      const [title, size] = productData[doorNumber - 1] || [
+        `${brandName} Door ${doorNumber}`,
+        "Confirm from catalog",
+      ];
 
       return {
         id: `${folder}-${doorNumber}`,
         image,
         brand: brandName,
-        title: names[doorNumber - 1] || `${brandName} Door ${doorNumber}`,
+        title,
         doorNumber,
-        size: "Contact us to confirm size",
+        size,
       };
     });
 }
 
-const kinzaProducts = loadProductImages("kinza", "KINZA");
-const fusimProducts = loadProductImages("fusim", "FUSIM");
-
 /* ========================================
-   ALTERNATE KINZA AND FUSIM PRODUCTS
+   BRAND PRODUCT LISTS
 ======================================== */
 
-const products = [];
+const kinzaProducts = loadProductImages("kinza", "KINZA");
+const fusimProducts = loadProductImages("fusim", "FUSIM");
+/* ========================================
+   FUSIM PRODUCTS FIRST, THEN KINZA
+======================================== */
 
-for (
-  let index = 0;
-  index < Math.max(kinzaProducts.length, fusimProducts.length);
-  index++
-) {
-  if (kinzaProducts[index]) products.push(kinzaProducts[index]);
-  if (fusimProducts[index]) products.push(fusimProducts[index]);
-}
-
+const products = [...fusimProducts, ...kinzaProducts];
 /* ========================================
    SERVICES DATA
 ======================================== */
@@ -302,6 +323,9 @@ function ProductDetailsPage({ product }) {
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [visibleProducts, setVisibleProducts] = useState(6);
+
+  const [visibleFusimProducts, setVisibleFusimProducts] = useState(6);
+  const [visibleKinzaProducts, setVisibleKinzaProducts] = useState(6);
 
   const servicesRef = useRef(null);
 
@@ -623,187 +647,126 @@ function App() {
           </div>
         </section>
 
-        {/* PRODUCTS */}
 
-        <section className="products-section section-padding" id="products">
-          <div className="container">
-            <div className="section-heading">
-              <span className="eyebrow">OUR PRODUCTS</span>
-              <h2>
-                Explore Our Luxury
-                <br />
-                <span>Steel Door Collection</span>
-              </h2>
-            </div>
+{/* PRODUCTS */}
 
-            {products.length > 0 ? (
-              <>
-                <div className="products-grid">
-                  {products.slice(0, visibleProducts).map((product) => (
-                    <article className="product-card" key={product.id}>
-                      <div className="product-image">
-                        <img
-                          src={product.image}
-                          alt={`${product.brand} steel door`}
-                          loading="lazy"
-                        />
-                      </div>
+<section className="products-section section-padding" id="products">
+  <div className="container">
+    <div className="section-heading">
+      <span className="eyebrow">OUR PRODUCTS</span>
+      <h2>
+        Explore Our Luxury
+        <br />
+        <span>Steel Door Collection</span>
+      </h2>
+    </div>
 
-                      <div className="product-info">
-                        <div>
-                          <span>{product.brand}</span>
-                          <h3>{product.title}</h3>
-                          <p className="product-size">
-                            Size: {product.size}
-                              </p>
-                        </div>
-                      </div>
+    {/* FUSIM COLLECTION */}
+    <div className="brand-products-section">
+      <h2 className="brand-products-title">FUSIM Steel Doors</h2>
 
-                      <a
-                        className="product-explore-link"
-                        href={`/products/${product.id}`}
-                      >
-                        Read More
-                        <ArrowUpRight size={15} />
-                      </a>
-                    </article>
-                  ))}
-                </div>
-
-                <div className="products-more">
-                  {visibleProducts < products.length ? (
-                    <button
-                      type="button"
-                      className="products-view-more"
-                      onClick={showMoreProducts}
-                    >
-                      View More <ArrowUpRight size={17} />
-                    </button>
-                  ) : (
-                    products.length > 6 && (
-                      <button
-                        type="button"
-                        className="products-view-more"
-                        onClick={showLessProducts}
-                      >
-                        Show Less
-                      </button>
-                    )
-                  )}
-                </div>
-              </>
-            ) : (
-              <div className="products-empty">
-                <h3>No product images found.</h3>
-                <p>
-                  Check that your images are inside src/products/kinza/
-                  and src/products/fusim/, or src/assets/products/kinza/
-                  and src/assets/products/fusim/.
-                </p>
-                <p>
-                  Use filenames such as door1.jpg through door15.jpg.
-                  Supported formats: JPG, JPEG, PNG and WEBP.
-                </p>
+      <div className="products-grid">
+        {fusimProducts
+          .slice(0, visibleFusimProducts)
+          .map((product) => (
+            <article className="product-card" key={product.id}>
+              <div className="product-image">
+                <img
+                  src={product.image}
+                  alt={`FUSIM ${product.title} steel door`}
+                  loading="lazy"
+                />
               </div>
-            )}
-          </div>
-        </section>
 
-        {/* WHY CHOOSE US */}
+              <div className="product-info">
+                <div>
+                  <span>FUSIM</span>
+                  <h3>{product.title}</h3>
+                  
+<div className="product-size">
+  <span className="product-size-label">SIZE</span>
+  <span className="product-size-value">{product.size}</span>
+</div>
 
-        <section
-          className="why-choose-section section-padding"
-          id="why-choose-us"
+                </div>
+              </div>
+
+              <a
+                className="product-explore-link"
+                href={`/products/${product.id}`}
+              >
+                Read More
+                <ArrowUpRight size={15} />
+              </a>
+            </article>
+          ))}
+      </div>
+
+      {fusimProducts.length > visibleFusimProducts && (
+        <button
+          className="products-view-more"
+          type="button"
+          onClick={() =>
+            setVisibleFusimProducts(fusimProducts.length)
+          }
         >
-          <div className="container">
-            <div className="why-choose-grid">
-              <div className="why-choose-left">
-                <div className="why-choose-heading">
-                  <span className="eyebrow">WHY CHOOSE US</span>
-                  <h2>
-                    Trusted Excellence in Premium{" "}
-                    <span>Steel Door Solutions</span>
-                  </h2>
-                </div>
+          View More FUSIM Doors
+        </button>
+      )}
+    </div>
 
-                <div className="why-choose-features">
-                  <article className="why-feature-card">
-                    <div className="why-feature-icon">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden="true"
-                      >
-                        <path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z" />
-                        <path d="m9 12 2 2 4-4" />
-                      </svg>
-                    </div>
+    {/* KINZA COLLECTION */}
+    <div className="brand-products-section">
+      <h2 className="brand-products-title">KINZA Steel Doors</h2>
 
-                    <div>
-                      <h3>Superior Build Quality</h3>
-                      <p>
-                        Crafted with high-strength steel and premium
-                        wooden finishes, our doors combine lasting
-                        durability, dependable protection, and elegant
-                        design for your home.
-                      </p>
-                    </div>
-                  </article>
+      <div className="products-grid">
+        {kinzaProducts
+          .slice(0, visibleKinzaProducts)
+          .map((product) => (
+            <article className="product-card" key={product.id}>
+              <div className="product-image">
+                <img
+                  src={product.image}
+                  alt={`KINZA ${product.title} steel door`}
+                  loading="lazy"
+                />
+              </div>
 
-                  <article className="why-feature-card">
-                    <div className="why-feature-icon">
-                      <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.6"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        aria-hidden="true"
-                      >
-                        <path d="M12 3 14.8 8.7 21 9.6l-4.5 4.4 1.1 6.2L12 17.3l-5.6 2.9 1.1-6.2L3 9.6l6.2-.9L12 3Z" />
-                        <path d="m9.5 12 1.7 1.7 3.5-3.5" />
-                      </svg>
-                    </div>
-
-                    <div>
-                      <h3>Reliable Customer Trust</h3>
-                      <p>
-                        Explore stylish and secure door solutions from
-                        Kinza and Fusim, thoughtfully designed to
-                        complement modern spaces and your everyday needs.
-                      </p>
-                    </div>
-                  </article>
-
-                  <a className="why-discover-button" href="#contact">
-                    Discover More <span aria-hidden="true">→</span>
-                  </a>
+              <div className="product-info">
+                <div>
+                  <span>KINZA</span>
+                  <h3>{product.title}</h3>
+                  <p className="product-size">
+                    Size: {product.size}
+                  </p>
                 </div>
               </div>
 
-              <div className="why-choose-visual">
-                <div className="why-choose-circle">
-                  <img
-                    src={kinzaDoor1}
-                    alt="Premium DEFENZA steel entrance door"
-                    loading="lazy"
-                  />
-                </div>
+              <a
+                className="product-explore-link"
+                href={`/products/${product.id}`}
+              >
+                Read More
+                <ArrowUpRight size={15} />
+              </a>
+            </article>
+          ))}
+      </div>
 
-                <div className="why-choose-image-label">
-                  <span className="why-label-line" />
-                  <span>DEFENZA DOORS &amp; WINDOWS</span>
-                  <span className="why-label-line" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {kinzaProducts.length > visibleKinzaProducts && (
+        <button
+          className="products-view-more"
+          type="button"
+          onClick={() =>
+            setVisibleKinzaProducts(kinzaProducts.length)
+          }
+        >
+          View More KINZA Doors
+        </button>
+      )}
+    </div>
+  </div>
+</section>
 
         {/* AUTOMATIC MOVING DOOR CATEGORIES */}
 
